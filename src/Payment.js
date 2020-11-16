@@ -1,3 +1,4 @@
+import { Link } from '@material-ui/core';
 import React from 'react';
 import CheckoutProduct from './CheckoutProduct';
 import './Payment.css';
@@ -9,7 +10,13 @@ function Payment() {
 
     return (
         <div className='payment'>
-            <div className='payment__container'></div>
+            <div className='payment__container'>
+                <h1>
+                    Checkout (
+                    <Link to="/checkout">{basket?.length} items</Link>
+                    )
+                </h1>
+
                 {/*Payment section - delivery adress */}
                 <div className='payment__section'>
                     <div className='payment__title'>
@@ -43,9 +50,15 @@ function Payment() {
 
                 {/*Payment section - payment method */}
                 <div className='payment__section'>
-
+                    <div className='payment__title'>
+                        <h3>Payment Method</h3>
+                    </div>
+                    <div className='payment__details'>
+                        {/*Stripe magic will go */}
+                    </div>
 
                 </div>
+            </div>
         </div>
     )
 }
